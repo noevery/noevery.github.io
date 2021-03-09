@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-09T13:25:04.870Z</updated>
+  <updated>2021-03-09T11:04:18.945Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>通达OA未授权访问漏洞</title>
-    <link href="http://example.com/2021/03/09/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/"/>
-    <id>http://example.com/2021/03/09/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/</id>
-    <published>2021-03-09T13:01:59.664Z</published>
-    <updated>2021-03-09T13:25:04.870Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="通达OA未授权访问漏洞"><a href="#通达OA未授权访问漏洞" class="headerlink" title="通达OA未授权访问漏洞"></a>通达OA未授权访问漏洞</h1><p>1、先访问</p><p><a href="http://xxx.xxx.xxx/mobile/auth_mobi.php?isAvatar=1&amp;uid=1&amp;P_VER=0">http://xxx.xxx.xxx/mobile/auth_mobi.php?isAvatar=1&amp;uid=1&amp;P_VER=0</a></p><p>如果出现空白页面,则说明已经获得权限.</p><p><img src="/.com//640.png" alt="640"></p><p>2、在访问<a href="http://xxx.xxx.xxx/general/">http://xxx.xxx.xxx/general/</a> ,成功进入系统</p><p><img src="/.com//640(1).png" alt="641"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;通达OA未授权访问漏洞&quot;&gt;&lt;a href=&quot;#通达OA未授权访问漏洞&quot; class=&quot;headerlink&quot; title=&quot;通达OA未授权访问漏洞&quot;&gt;&lt;/a&gt;通达OA未授权访问漏洞&lt;/h1&gt;&lt;p&gt;1、先访问&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://xxx.x</summary>
-      
-    
-    
-    
-    <category term="渗透测试" scheme="http://example.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    
-    <category term="中间件漏洞" scheme="http://example.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
-    
-  </entry>
   
   <entry>
     <title>msf使用大全</title>
