@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>内网信息收集 | 东风往林</title>
+  <meta name="description" content="内网信息收集手动收集信息查询网络配置信息1ipconifg &#x2F;all  查询操作系统版本获取操作系统和版本信息 1systeminfo | findstr &#x2F;B &#x2F;C:&quot;OS 名称&quot; &#x2F;C:&quot;OS 版本&quot;  如果是英文操作系统 1systeminfo | findstr &#x2F;B &#x2F;C:&quot;OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内网信息收集">
+<meta property="og:url" content="http://example.com/2021/03/18/%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="内网信息收集手动收集信息查询网络配置信息1ipconifg &#x2F;all  查询操作系统版本获取操作系统和版本信息 1systeminfo | findstr &#x2F;B &#x2F;C:&quot;OS 名称&quot; &#x2F;C:&quot;OS 版本&quot;  如果是英文操作系统 1systeminfo | findstr &#x2F;B &#x2F;C:&quot;OS">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-18T08:41:17.955Z">
+<meta property="article:modified_time" content="2021-03-18T08:45:48.002Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="信息收集">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2021/03/18/%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="../images/avatar.jpg" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">东风往林</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> ShanTou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/noevery" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>渗透感悟：最重要的是信息收集！通过实战一点一点完善自己的渗透流程，最终目标是getshell。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a><span class="category-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E7%BD%91/" rel="tag">内网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98/" rel="tag">实战</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E/" rel="tag">通用漏洞</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" style="font-size: 13.5px;">信息收集</a> <a href="/tags/%E5%86%85%E7%BD%91/" style="font-size: 13px;">内网</a> <a href="/tags/%E5%AE%9E%E6%88%98/" style="font-size: 14px;">实战</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 13.5px;">工具</a> <a href="/tags/%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E/" style="font-size: 13px;">通用漏洞</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="title">一次补天公益刷洞过程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-30T01:13:47.278Z" itemprop="datePublished">2021-08-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/" class="title">webpack反编译</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-06-17T07:04:39.220Z" itemprop="datePublished">2021-06-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/06/15/dedecms%E6%8C%96%E6%8E%98/" class="title">dedecms挖掘</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-06-15T01:34:23.330Z" itemprop="datePublished">2021-06-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/04/%E6%94%BB%E9%98%B2%E6%BC%94%E7%BB%83/" class="title">攻防演练</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-04T01:24:23.628Z" itemprop="datePublished">2021-05-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/16/input%E7%B1%BB%E5%9E%8B%E4%B8%BAhidden%E6%97%B6%E8%A7%A6%E5%8F%91xss/" class="title">input类型为hidden时触发xss</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-16T09:01:29.625Z" itemprop="datePublished">2021-04-16</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-内网信息收集" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      内网信息收集
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/03/18/%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
+	  <time datetime="2021-03-18T08:41:17.955Z" itemprop="datePublished">2021-03-18</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a>
+  </span>
+
+
+        
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2021/03/18/%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="leancloud_visitors"  data-flag-title="内网信息收集">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/03/18/%E5%86%85%E7%BD%91%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="内网信息收集"><a href="#内网信息收集" class="headerlink" title="内网信息收集"></a>内网信息收集</h1><h2 id="手动收集信息"><a href="#手动收集信息" class="headerlink" title="手动收集信息"></a>手动收集信息</h2><h3 id="查询网络配置信息"><a href="#查询网络配置信息" class="headerlink" title="查询网络配置信息"></a>查询网络配置信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconifg &#x2F;all</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询操作系统版本"><a href="#查询操作系统版本" class="headerlink" title="查询操作系统版本"></a>查询操作系统版本</h3><p>获取操作系统和版本信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systeminfo | findstr &#x2F;B &#x2F;C:&quot;OS 名称&quot; &#x2F;C:&quot;OS 版本&quot;</span><br></pre></td></tr></table></figure>
+
+<p>如果是英文操作系统</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systeminfo | findstr &#x2F;B &#x2F;C:&quot;OS Name&quot; &#x2F;C:&quot;OS Version&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看系统体系结构"><a href="#查看系统体系结构" class="headerlink" title="查看系统体系结构"></a>查看系统体系结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo %PROCESSOR_ARCHITECTURE%</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装软件版本信息"><a href="#安装软件版本信息" class="headerlink" title="安装软件版本信息"></a>安装软件版本信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic product get name,version</span><br></pre></td></tr></table></figure>
+
+<p>利用powershell命令，收集软件版本系信息条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell &quot;Get-WmiObject -class Win32_Product |Select-Object -Property name,version&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看本机服务信息"><a href="#查看本机服务信息" class="headerlink" title="查看本机服务信息"></a>查看本机服务信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic service list brief</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看进程列表信息"><a href="#查看进程列表信息" class="headerlink" title="查看进程列表信息"></a>查看进程列表信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist &#x2F;v</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>或者如下命令也可以</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic process list brief</span><br></pre></td></tr></table></figure>
+
+<h3 id="常见软件杀毒表"><a href="#常见软件杀毒表" class="headerlink" title="常见软件杀毒表"></a>常见软件杀毒表</h3><table>
+<thead>
+<tr>
+<th align="center">进程</th>
+<th align="center">软件名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">360SD.exe</td>
+<td align="center">360杀毒</td>
+</tr>
+<tr>
+<td align="center">360TRAY.exe</td>
+<td align="center">360实时保护</td>
+</tr>
+<tr>
+<td align="center">ZHUDONGFANGYU.exe</td>
+<td align="center">360主动防御</td>
+</tr>
+<tr>
+<td align="center">KSAFETRAY.exe</td>
+<td align="center">金山卫士</td>
+</tr>
+<tr>
+<td align="center">SAFEDOGUPDATECENTER.exe</td>
+<td align="center">服务器安全狗</td>
+</tr>
+<tr>
+<td align="center">MCAFEE MCSHIELD.exe</td>
+<td align="center">MCAFEE</td>
+</tr>
+<tr>
+<td align="center">EGULEXE</td>
+<td align="center">NoD32</td>
+</tr>
+<tr>
+<td align="center">AVP.exe</td>
+<td align="center">卡巴斯基</td>
+</tr>
+<tr>
+<td align="center">AVGUARD.exe</td>
+<td align="center">小红伞</td>
+</tr>
+<tr>
+<td align="center">BDAGENT.exe</td>
+<td align="center">BITDEFENDER</td>
+</tr>
+</tbody></table>
+<h3 id="查看启动程序信息"><a href="#查看启动程序信息" class="headerlink" title="查看启动程序信息"></a>查看启动程序信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic startup get command,caption</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看计划任务"><a href="#查看计划任务" class="headerlink" title="查看计划任务"></a>查看计划任务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">schtasks &#x2F;query &#x2F;fo  LIST &#x2F;v</span><br></pre></td></tr></table></figure>
+
+<p>PS：如果遇到资源无法加载问题，则是由于当前活动页码所致，之后，我们可以将活动页码修改为437即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 437</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看用户列表信息"><a href="#查看用户列表信息" class="headerlink" title="查看用户列表信息"></a>查看用户列表信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取本地管理员信息"><a href="#获取本地管理员信息" class="headerlink" title="获取本地管理员信息"></a>获取本地管理员信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net localgroup administrators</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看当前在线用户信息"><a href="#查看当前在线用户信息" class="headerlink" title="查看当前在线用户信息"></a>查看当前在线用户信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">query user || qwinsta</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看会话信息"><a href="#查看会话信息" class="headerlink" title="查看会话信息"></a>查看会话信息</h3><ul>
+<li>执行如下命令(需要管理员权限才行)，列出或断开本地计算机和连接的客户端的会话</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net session</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看端口列表信息"><a href="#查看端口列表信息" class="headerlink" title="查看端口列表信息"></a>查看端口列表信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat –ano</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询补丁列表信息"><a href="#查询补丁列表信息" class="headerlink" title="查询补丁列表信息"></a>查询补丁列表信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Systeminfo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同时也可以使用wmic来识别安装在系统中的补丁情况</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic qfe get Caption,Description,HotFixID,InstalledOn</span><br></pre></td></tr></table></figure>
+
+<h3 id="本机共享信息"><a href="#本机共享信息" class="headerlink" title="本机共享信息"></a>本机共享信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net share</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用wmic查找共享</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic share get name,path,status</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询路由和缓存表"><a href="#查询路由和缓存表" class="headerlink" title="查询路由和缓存表"></a>查询路由和缓存表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route print</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询防火墙配置"><a href="#查询防火墙配置" class="headerlink" title="查询防火墙配置"></a>查询防火墙配置</h3><h5 id="关闭防火墙配置"><a href="#关闭防火墙配置" class="headerlink" title="关闭防火墙配置:"></a>关闭防火墙配置:</h5><ul>
+<li>Windows Server 2003系统及以前版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh firewall set opmode disable</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Windows Server 2003系统及之后的版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall set allprofiles state off</span><br></pre></td></tr></table></figure>
+
+<h5 id="查询防火墙配置-1"><a href="#查询防火墙配置-1" class="headerlink" title="查询防火墙配置"></a>查询防火墙配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh firewall show config</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改防火墙配置"><a href="#修改防火墙配置" class="headerlink" title="修改防火墙配置"></a>修改防火墙配置</h5><ul>
+<li>Windows Server 2003系统及之前版本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh firewall add allowedprogram c:\nc.exe &quot;allow nc&quot; enable</span><br></pre></td></tr></table></figure>
+
+<p>Windows server 2003 之后系统版本</p>
+<ul>
+<li>允许指定程序连入，命令如下:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name&#x3D;&quot;pass nc&quot; dir&#x3D;in action&#x3D;allow program&#x3D;&quot;C: \nc.exe&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>允许指定程序连出，命令如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name&#x3D;&quot;pass nc&quot; dir&#x3D;in action&#x3D;allow program&#x3D;&quot;C: \nc.exe&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="允许3389端口放行"><a href="#允许3389端口放行" class="headerlink" title="允许3389端口放行"></a>允许3389端口放行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall firewall add rule name&#x3D;&quot;Remote Desktop&quot; protocol&#x3D;TCP dir&#x3D;in localport&#x3D;3389 action&#x3D;allow</span><br></pre></td></tr></table></figure>
+
+<p>自定义防火墙日志存储位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall set currentprofile logging filename &quot;C:\windows\temp\fw.log&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询远程服务连接"><a href="#查询远程服务连接" class="headerlink" title="查询远程服务连接"></a>查询远程服务连接</h3><p>查询远程连接端口</p>
+<ul>
+<li>在cmd下使用注册表查询语句，命令如下，得到连接端口为0xd3d，转换后为3389</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG QUERY &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&quot; &#x2F;V PortNumber</span><br></pre></td></tr></table></figure>
+
+<h5 id="在windows-server-2003-中开启3389端口"><a href="#在windows-server-2003-中开启3389端口" class="headerlink" title="在windows server 2003 中开启3389端口"></a>在windows server 2003 中开启3389端口</h5><ul>
+<li>方法一</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic RDTOGGLE WHERE ServerName&#x3D;&#39;%COMPUTERNAME%&#39; call SetAllowTSConnections 1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法二</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 00000000 &#x2F;f</span><br></pre></td></tr></table></figure>
+
+<h5 id="在Windows-Server-2008-和-Windows-Server-2012-中开启-3389-端口"><a href="#在Windows-Server-2008-和-Windows-Server-2012-中开启-3389-端口" class="headerlink" title="在Windows Server 2008 和 Windows Server 2012 中开启 3389 端口"></a><strong>在Windows Server 2008 和 Windows Server 2012 中开启 3389 端口</strong></h5><ul>
+<li>如下命令来开启3389端口——管理员权限执行否则会报错</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic &#x2F;namespace:\\root\cimv2\terminalservices path win32_terminalservicesetting where (__CLASS !&#x3D;&quot;&quot;) call setallowtsconnections 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmic &#x2F;namespace:\\root\cimv2\terminalservices path win32_tsgeneralsetting where (TerminalName&#x3D;&#39;RDP-Tcp&#39;) call setuserauthenticationrequired 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add &quot;HKLM\SYSTEM\CURRENT\CONTROLSET\CONTROL\TERMINAL SERVER&quot; &#x2F;v fSingleSessionPerUser &#x2F;t REG_DWORD &#x2F;d 0 &#x2F;f</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 00000000 &#x2F;f</span><br></pre></td></tr></table></figure>
+
+<h2 id="自动化信息收集"><a href="#自动化信息收集" class="headerlink" title="自动化信息收集"></a>自动化信息收集</h2><h3 id="WMIC收集目标机信息的脚本"><a href="#WMIC收集目标机信息的脚本" class="headerlink" title="WMIC收集目标机信息的脚本"></a>WMIC收集目标机信息的脚本</h3><ul>
+<li>WMIC脚本的不载地址为<a target="_blank" rel="noopener" href="http://www.fuzzysecurity.com/scripts/files/wmic_info.rar">http://www.fuzzysecurity.com/scripts/files/wmic_info.rar</a></li>
+<li>WMIC（Windows Management Instrumentation Command-Line，Windows管理工具命令行）是Windows下最有用的命令行工具。WMIC对于信息收集和渗透都是非常实用的。默认任何版本的WindowsXP的低权限用户不能访问WMIC，Windows7以上版本允许低权限的用户访问WMIC并执行相关查询操作。</li>
+</ul>
+<h3 id="Empire下主机信息收集"><a href="#Empire下主机信息收集" class="headerlink" title="Empire下主机信息收集"></a><strong>Empire下主机信息收集</strong></h3><ul>
+<li>在 Empire 下也存在类似模块，输入“usemodule situational_awareness/host/winenum”命令即可查看本机用户、域组成员、最后的密码设置时间、剪贴板内容、系统基本信息、网络适配器信息、 共享信息等</li>
+</ul>
+<h2 id="查看当前权限"><a href="#查看当前权限" class="headerlink" title="查看当前权限"></a>查看当前权限</h2><h3 id="查看当前权限-1"><a href="#查看当前权限-1" class="headerlink" title="查看当前权限"></a>查看当前权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami</span><br></pre></td></tr></table></figure>
+
+<p>获取了一台主机的权限后，会有以下三种情况：</p>
+<ul>
+<li>本地普通用户：当前权限为 win-2008 本机的 user 用户：</li>
+<li>本地管理员用户：当前权限为 win7-x64-test 本机的 administrator用户：</li>
+<li>域内用户：当前权限为 hacke 域内的 administrator用户：</li>
+</ul>
+<h3 id="获取域SID"><a href="#获取域SID" class="headerlink" title="获取域SID"></a>获取域SID</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami &#x2F;all</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断是否有域"><a href="#判断是否有域" class="headerlink" title="判断是否有域"></a>判断是否有域</h3><p>执行如下命令，可以查看网关IP 地址、DNS的IP地址、本地地址是否和DNS服务器为同一网段、域名等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig &#x2F;all</span><br></pre></td></tr></table></figure>
+
+<p>然后，通过反向解析查询命令nslookup来解析域名的IP地址。使用解析出来的IP地址进行对比，判断域控制器和DNS服务器是否在同一台服务器上</p>
+<ul>
+<li>主DNS后缀在ipconfig /all 能查询</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup hacke.testlab</span><br></pre></td></tr></table></figure>
+
+<p>查看系统信息，如结果所示，域即域名，登录服务器为域控制器。如果域显示为 WORKGROUP，表示当前服务器不在域内，当前域名为 hacke.testlab：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Systeminfo</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断主域"><a href="#判断主域" class="headerlink" title="判断主域"></a>判断主域</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net time &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>或者更详细的信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami &#x2F;all</span><br></pre></td></tr></table></figure>
+
+<h3 id="探测域内存活主机"><a href="#探测域内存活主机" class="headerlink" title="探测域内存活主机"></a>探测域内存活主机</h3><p>内网存活主机的探测是内网渗透中不可或缺的一个环节。在扫描的时候，应尽量避免使用Namp等工具进行暴力扫描，也不要在目标机器上使用图形化的工具，而要尽量使用目标系统自带的各种工具，推荐使用PowerShell脚本。对于Windows 7以下版本的系统，可以使用VBS 脚 本。在探测时，可在白天和夜间分别探测，以对比分析存活主机和对应的 IP 地址。<br>###利用NetBIOS快速探测内网<br>NetBIOS是一种在局域网上的程序可以使用的应用程序编程接口（API），为程序提供了请求低级服务的统一的命令集，作用是给局域网提供网络及其他特殊功能。几乎所有的局域网都是在NetBIOS协议的基础上工作的。“NetBIOS”也是计算机的标识名，该名字主要用于局域网中计算机之间的相互访问。NetBIOS的工作流程是正常的机器名解析查询应答过程，推荐优先使用。</p>
+<p>NetBIOS 的使用比较简单。将其上传到目标主机后，直接输入IP地址范围并运行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nbtscan-1.0.35.exe 192.168.174.0&#x2F;24</span><br></pre></td></tr></table></figure>
+
+<p>显示结果的第一列为IP地址，第二列是机器名和所在域名，最后一列是关于机器所开启的服务的列表，具体含义如下表所示:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SHARING</td>
+<td>该机器中有运行文件和打印共享服务，但不一定有内容共享</td>
+</tr>
+<tr>
+<td>DC</td>
+<td>该机器可能是域控制</td>
+</tr>
+<tr>
+<td>U=USER</td>
+<td>该机器有登录名为USER的用户（不是太准确）</td>
+</tr>
+<tr>
+<td>IIS</td>
+<td>该机器可能安装了IIS服务器</td>
+</tr>
+<tr>
+<td>EXECHANGE</td>
+<td>该机器可能安装了微软的EXCHANGE</td>
+</tr>
+<tr>
+<td>NOTES</td>
+<td>该机器可能安装了</td>
+</tr>
+<tr>
+<td>？</td>
+<td>没有识别出该机器的NETBIOS资源，可以使用“-F”选项再次进行扫描</td>
+</tr>
+</tbody></table>
+<h3 id="ICMP-协议快速探测内网"><a href="#ICMP-协议快速探测内网" class="headerlink" title="ICMP 协议快速探测内网"></a>ICMP 协议快速探测内网</h3><ul>
+<li>除了利用NetBIOS协议，还可以使用 ICMP 协议。依次对内网中的每个 IP 地址执行 ping 命 令，可以快速有效地找出内网中所有存活的主机。在实战中，可以使用如下命令循环探测整个 C 段</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for &#x2F;L %I in (1,1,254) DO @ping -w 1 -n 1 192.168.174.%I | findstr &quot;TTL&#x3D;&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="收集域内基础信息"><a href="#收集域内基础信息" class="headerlink" title="收集域内基础信息"></a>收集域内基础信息</h2><h3 id="在域内添加用户"><a href="#在域内添加用户" class="headerlink" title="在域内添加用户"></a>在域内添加用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user abc Aa123456! &#x2F;add &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<h3 id="将用户添加到域环境"><a href="#将用户添加到域环境" class="headerlink" title="将用户添加到域环境"></a>将用户添加到域环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net group &quot;domain admins&quot; abc &#x2F;add &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<h3 id="将域用户添加到本地管理员组"><a href="#将域用户添加到本地管理员组" class="headerlink" title="将域用户添加到本地管理员组"></a>将域用户添加到本地管理员组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net localgroup Administrators &#x2F;add myad.com\abc</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="查看域的命令如下"><a href="#查看域的命令如下" class="headerlink" title="查看域的命令如下"></a>查看域的命令如下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net view &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看域内所有计算机"><a href="#查看域内所有计算机" class="headerlink" title="查看域内所有计算机"></a>查看域内所有计算机</h3><ul>
+<li>执行如下命令，可以通过查询得到的主机名来对主机角色进行初步判断</li>
+<li>例如，”dev”可能是开发服务器,”web”或者app可能是Web服务， “NAS”可能是存储服务器,”fileserver”可能是文件服务器等。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net view &#x2F;domain:XXX</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看域内所有用户组列表"><a href="#查看域内所有用户组列表" class="headerlink" title="查看域内所有用户组列表"></a>查看域内所有用户组列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net group &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Domain Admins：域管理员组。</li>
+<li>Domain Computers：域内机器。</li>
+<li>Domain Controllers：域控制器。</li>
+<li>Domain Guest：域访客组，权限较低。</li>
+<li>Domain Users：域用户。</li>
+<li>Enterprise Admins：企业系统管理员用户。</li>
+</ul>
+<h3 id="查看所有域成员计算机列表"><a href="#查看所有域成员计算机列表" class="headerlink" title="查看所有域成员计算机列表"></a>查看所有域成员计算机列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net group &quot;domain computers&quot; &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取域信任列表"><a href="#获取域信任列表" class="headerlink" title="获取域信任列表"></a>获取域信任列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nltest &#x2F;domain_trusts</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看域控制器"><a href="#查看域控制器" class="headerlink" title="查看域控制器"></a>查看域控制器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nltest &#x2F;DCLIST:xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看域控制器的ip"><a href="#查看域控制器的ip" class="headerlink" title="查看域控制器的ip"></a>查看域控制器的ip</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Nslookup -type&#x3D;SRV _ldap._tcp</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看域控当前时间"><a href="#查看域控当前时间" class="headerlink" title="查看域控当前时间"></a>查看域控当前时间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net time &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看域控制器组"><a href="#查看域控制器组" class="headerlink" title="查看域控制器组"></a>查看域控制器组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net group &quot;Domain Controllers&quot; &#x2F;domain</span><br></pre></td></tr></table></figure>
+
+<h3 id="定位域管理员"><a href="#定位域管理员" class="headerlink" title="定位域管理员"></a>定位域管理员</h3><ul>
+<li>在通常的网络环境里，内网中部署了大量的网络安全设备，如IDS、IPS、日志审计、安全网关、反病毒软件等。所以，在域网络攻击测试场景中，如果渗透测试人员获取了域内的一个支点，为了实现对域网络的整体控制， 渗透测试人员就需要获取域管理员权限。</li>
+</ul>
+<h4 id="常用域管理员定位工具"><a href="#常用域管理员定位工具" class="headerlink" title="常用域管理员定位工具"></a>常用域管理员定位工具</h4><ul>
+<li>常用的工具有psloggedon.exe、pveFindADUser.exe、netsess.exe、hunter、NetView 等。在PowerShell中，常用的脚本是PowerView。</li>
+</ul>
+<h4 id="psloggedon-exe"><a href="#psloggedon-exe" class="headerlink" title="psloggedon.exe"></a><strong>psloggedon.exe</strong></h4><p>psloggedon.exe可以显示本地登录的用户和通过本地计算机或远程计算机的资源登录的用户。如果指定了用户名而不是计算机，psloggedon.exe会搜索网络邻居中的计算机，并显示该用户当前是否已登录，其原理是通过检 验注册表里HKEY_USERS项的key值来查询谁登录过机器（同样调用了NetSessionEnum API）， 某些功能需要拥有管理员权限才能使用。psloggedon.exe的下载地址为<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/sysinternals/downloads/psloggedon%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%8F%82%E6%95%B0">https://docs.microsoft.com/en-us/sysinternals/downloads/psloggedon，使用如下命令及参数</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">psloggedon [-] [-l] [-x] [\\computername|username]</span><br><span class="line">&#x2F;&#x2F;实例</span><br><span class="line">Psloggedon.exe \\域名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-：显示支持的选项和用于输出值的单位。</li>
+<li>-l：仅显示本地登录，不显示本地和网络资源登录。</li>
+<li>-x：不显示登录时间。</li>
+<li>\computername：指定要列出登录信息的计算机的名称。</li>
+<li>Username：指定用户名，在网络中搜索该用户登录的计算机。</li>
+</ul>
+<h4 id="pveFindADUser"><a href="#pveFindADUser" class="headerlink" title="pveFindADUser"></a><strong>pveFindADUser</strong></h4><p>pveFindADUser.exe 可用于查找 Active Directory 用户登录的位置，枚举域用户，以及查找在 特定计算机上登录的用户，包括本地用户、通过RDP 登录的用户、用于运行服务和计划任务的用户账 户。运行该工具的计算机需要具有.NET Framework 2.0，并且需要具有管理员权限。pveFindADUser.exe 的下载地址为 <a target="_blank" rel="noopener" href="https://github.com/chrisdee/Tools/tree/master/AD/ADFindUsersLoggedOn%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%8F%82%E6%95%B0">https://github.com/chrisdee/Tools/tree/master/AD/ADFindUsersLoggedOn，使用如下命令及参数</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pvefindaduser.exe &lt;参数&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-h：显示帮助。</li>
+<li>-u：检查是否有更新版本的实用程序。</li>
+<li>-current [‘’username’’]：如果仅指定了-current 参数，将获取所有目标计算机上当前登录的所 有用户。如果指定了用户名（DOMAIN\Username），则显示该用户登录的计算机。</li>
+<li>-last [‘’username’’]：如果仅指定了-last 参数，将获取目标计算机上的最后一个登录用户。如果指定了用户名（DOMAIN\Username），则显示具有此用户账户作为上次登录的计算机，根据网络的策略，可能会隐藏最后一个登录用户名，且该工具可能无法得到该用户名。</li>
+<li>-noping：阻止该工具在尝试获取用户登录信息之前对目标计算机执行 ping 命令。</li>
+<li>-target：可选参数，用于指定要查询的主机。如果未指定此参数，将查询当前域中的所有主 机。如果指定此参数，则后跟一个由逗号分隔的主机名列表。</li>
+</ul>
+<h4 id="netview"><a href="#netview" class="headerlink" title="netview"></a><strong>netview</strong></h4><p>netview.exe 是一个枚举工具，使用 WinAPI 枚举系统，利用 NetSessionEnum 找寻登录会话， 利用 NetShareEnum找寻共享，利用 NetWkstaUserEnum枚举登录的用户。同时，netview.exe 能够 查询共享入口和有价值用户。netview.exe 的绝大部分功能不需要管理员权限即可执行，下载地址为<a target="_blank" rel="noopener" href="https://github.com/mubix/netview%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4%E5%8F%8A%E5%8F%82%E6%95%B0">https://github.com/mubix/netview，使用如下命令及参数</a></p>
+<ul>
+<li>-h：显示帮助菜单。</li>
+<li>-f filename.txt：指定从中提取主机列表的文件。</li>
+<li>-e filename.txt：指定要排除的主机名文件。</li>
+<li>-o filename.txt：将所有输出重定向到文件。</li>
+<li>-d domain：指定从中提取主机列表的域。如果没有指定，则使用当前域。</li>
+<li>-g group：指定用户搜寻的组名。如果没有指定，则使用 Domain Admins。</li>
+<li>-c：检查对已找到共享的访问权限。</li>
+</ul>
+<h2 id="利用PowerShell收集域信息"><a href="#利用PowerShell收集域信息" class="headerlink" title="利用PowerShell收集域信息"></a><strong>利用PowerShell收集域信息</strong></h2><p>PowerShell是微软推出的一款用于提高管理员对操作系统及应用程序易用性和扩展性的脚本环境，可以说是cmd.exe的加强版。微软已经将PowerShell 2.0 内置在Windows Server 2008 和 Windows 7中，将PowerShell 3.0内置在Windows Server 2012和 Windows 8中，将 PowerShell 4.0内置在 Windows Server 2012 R2 和 Windows 8.1 中，将PowerShell 5.0 内置在 Windows Server 2016 和 Windows 10 中。PowerShell 作为微软官方推出的脚本语言，在Windows系统中的强大众所周知：在系统管理员手中，可以提高Windows系统管理工作的自动化程度；在渗透测试人员手中， 便于渗透测试人员更好地绕过系统防护和相关反病毒软件。</p>
+<ul>
+<li>如果想在 Windows 系统中执行一个 PowerShell 脚本，首先需要在Windows 系统的“开始菜 单”中打开“Run”对话框，输入“powershell”</li>
+<li>接下来，将弹出一个窗口，窗口上方有“Administrator”字样，代表当前 PowerShell 权限为管理员权限</li>
+</ul>
+<p>如果想执行一个PowerShell脚本，需要修改PowerShell的默认权限为执行权限。PowerShell常用的执行权限共有四种，具体如下：</p>
+<ul>
+<li>Restricted：默认设置，不允许执行任何脚本。</li>
+<li>Allsigned：只能运行经过证书验证的脚本。</li>
+<li>Unrestricted：权限最高，可以执行任意脚本。</li>
+<li>RemoteSigned：本地脚本无限制，但是对来自网络的脚本必须经过签名<br>在 PowerShell 中输入“Get-ExecutionPolicy”，看到为默认Restricted </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get-ExecutionPolicy</span><br></pre></td></tr></table></figure>
+
+<p>将 PowerShell 执行权限改为 Unrestricted，输入”Y”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-ExecutionPolicy Unrestricted</span><br></pre></td></tr></table></figure>
+
+<p>PowerView是一款依赖PowerShell和WMI对内网域情况进行查询的常用渗透脚本。<br>PowerView集成在PowerSploit工具包中，下载地址为：<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1">https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1</a><br>打开一个PowerShell窗口，进入PowerSploit目录下的 Recon 目录，输入命令“ImportModule .\PowerView.ps1”，成功导入脚本，没有报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd .\Recon</span><br><span class="line">&gt; Import-Module .\PowerView.ps1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PowerView中的常用命令如下：</li>
+<li>Get-NetDomain：获取当前用户所在的域名称。</li>
+<li>Get-NetUser：返回所有用户的详细信息。</li>
+<li>Get-NetDomainController：获取所有域控制器。</li>
+<li>Get-NetComputer：获取所有域内机器的详细信息。</li>
+<li>Get-NetOU：获取域中的 OU 信息。</li>
+<li>Get-NetGroup：获取所有域内组和组成员信息。</li>
+<li>Get-NetFileServer：根据 SPN 获取当前域使用的文件服务器。</li>
+<li>Get-NetShare：获取当前域内所有网络共享。</li>
+<li>Get-NetSession：获取在指定服务器存在的会话信息。</li>
+<li>Get-NetRDPSession：获取在指定服务器存在的远程连接信息。</li>
+<li>Get-NetProcess：获取远程主机的进程信息。</li>
+<li>Get-UserEvent：获取指定用户的日志信息。</li>
+<li>Get-ADObject：获取活动目录的对象信息。</li>
+<li>Get-NetGPO：获取域所有组策略对象。</li>
+<li>Get-DomainPolicy：获取域默认或域控制器策略。</li>
+<li>Invoke-UserHunter：用于获取域用户登录计算机及该用户是否有本地管理权限。</li>
+<li>Invoke-ProcessHunter：查找域内所有机器进程用于找到某特定用户。</li>
+<li>Invoke-UserEventHunter：根据用户日志获取某域用户登录过哪些域机器。</li>
+</ul>
+<h4 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/4UELXeyAVjvKur-lw1tEJA">https://mp.weixin.qq.com/s/4UELXeyAVjvKur-lw1tEJA</a></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/04/08/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%81%87%E5%88%B0%E7%9A%84%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8/" title="记一次遇到的布尔盲注"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" title="通达OA未授权访问漏洞"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/noevery" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 John Doe
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+<!-- custom analytics part create by xiamo -->
+<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script defer>
+AV.init({
+  appId: '',
+  appKey: ''
+});
+
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+		var visitors= $('.leancloud_visitors');
+		query.greaterThanOrEqualTo("time", 0);		
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {				
+					return;
+				}
+				var data = results;
+				visitors.each(function(){
+					var url = $(this).attr('id').trim();					
+					for (var i = 0; i < data.length; i++) {
+						var object = data[i];
+						var content = object.get('time');
+						var _url = object.get('url')
+						if(url == _url){
+							$(this).text(content);
+						}
+					}
+				})
+				
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else {
+		showTime(Counter);
+	}
+}); 
+</script>
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>

