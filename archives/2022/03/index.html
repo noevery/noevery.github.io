@@ -17,26 +17,16 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>webpack反编译 | 东风往林</title>
-  <meta name="description" content="在一次项目中遇到了.js.map文件，猜测app.26ef7a3e.js.map是webpack打包后生成的文件  wapplyzer插件查看网站信息，可以看到前端技术使用的是Vue框架，模块打包技术使用webpack 想要将其反编译出前端源码，需要使用node中的reverse-sourcemap模块进行反编译 首先安装node，本地环境已安装好node，版本为12.18.3，自行下载可到htt">
-<meta property="og:type" content="article">
-<meta property="og:title" content="webpack反编译">
-<meta property="og:url" content="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/index.html">
+  <title>归档: 2022/3 | 东风往林</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/archives/2022/03/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在一次项目中遇到了.js.map文件，猜测app.26ef7a3e.js.map是webpack打包后生成的文件  wapplyzer插件查看网站信息，可以看到前端技术使用的是Vue框架，模块打包技术使用webpack 想要将其反编译出前端源码，需要使用node中的reverse-sourcemap模块进行反编译 首先安装node，本地环境已安装好node，版本为12.18.3，自行下载可到htt">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/01.jpg">
-<meta property="og:image" content="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/02.jpg">
-<meta property="og:image" content="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/03.jpg">
-<meta property="og:image" content="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/04.jpg">
-<meta property="article:published_time" content="2021-06-17T07:04:39.220Z">
-<meta property="article:modified_time" content="2022-03-06T06:24:42.183Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/01.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/index.html">
+  <link rel="canonical" href="http://example.com/archives/2022/03/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -322,112 +312,48 @@
   
   
 <main class="main" role="main">
-  <div class="content">
-  <article id="post-webpack反编译" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  	<article class="content article article-archives article-type-list" itemscope="">
+	    <header class="article-header">
+	      <h1 itemprop="title">归档: 2022/3</h1>
+	      <p class="text-muted">共 1 篇文章</p>
+	    </header>
+	    <div class="article-body">
+	      
+  
+  
     
-    <div class="article-header">
+    
       
-        
-  
-    <h1 class="article-title" itemprop="name">
-      webpack反编译
-    </h1>
-  
-
       
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/" class="article-date">
-	  <time datetime="2021-06-17T07:04:39.220Z" itemprop="datePublished">2021-06-17</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/web/" rel="tag">web</a>
-  </span>
-
-
-        
-
-	<span class="article-read hidden-xs">
-    	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/" class="leancloud_visitors"  data-flag-title="webpack反编译">0</span>
-    </span>
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <p>在一次项目中遇到了.js.map文件，猜测app.26ef7a3e.js.map是webpack打包后生成的文件</p>
-<p><img src="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/01.jpg" alt="图1"></p>
-<p>wapplyzer插件查看网站信息，可以看到前端技术使用的是Vue框架，模块打包技术使用webpack</p>
-<p>想要将其反编译出前端源码，需要使用node中的reverse-sourcemap模块进行反编译</p>
-<p>首先安装node，本地环境已安装好node，版本为12.18.3，自行下载可到<code>https://nodejs.org/zh-cn/ </code>node官网下载</p>
-<p><img src="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/02.jpg" alt="图2"></p>
-<p>node安装好自带了npm工具可以安装模块使用</p>
-<p>安装reverse-sourcemap：npm install –global reverse-sourcemap</p>
-<p>–global 全局安装，我在之前就已经安装过了，所以跳过这个步骤。</p>
-<p>下载.js.map文件：curl -O <code>https://www.xxx.com/js/app.26ef7a3e.js.map</code></p>
-<p>下载下来后使用命令进行反编译：reverse-sourcemap --output-dir ./test app.26ef7a3e.js.map</p>
-<p>–output-dir  输出文件所放位置的目录</p>
-<p>app.26ef7a3e.js.map 需要进行反编译的文件</p>
-<p><img src="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/03.jpg" alt="图3"></p>
-<p>查看test目录可以看到反编译成功！</p>
-<p><img src="/2021/06/17/webpack%E5%8F%8D%E7%BC%96%E8%AF%91/04.jpg" alt="图4"></p>
-
-      
-    </div>
-    <div class="article-footer">
-      
-    </div>
-  </article>
-  
+      <section class="panel panel-default b-no">
+        <div class="panel-heading" role="tab">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" href="#collapse2022" aria-expanded="true">
+              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
+              2022
+            </a>
+            <!-- <a href="/archives/2022" class="archive-year">2022</a> -->
+          </h3>
+        </div>
+        <div id="collapse2022" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2022">
+        <div class="panel-body">
+          <div class="collection">
     
-  <section id="comments">
-  	
-  </section>
+    
+<a href="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2022-03-06T06:11:34.534Z" itemprop="datePublished">2022-03-06</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 上传pdf文件造成xss
+</a>
 
 
   
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
   
-  <ul class="pager pull-left">
-    
-    <li class="prev">
-      <a href="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" title="一次补天公益刷洞过程"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/2021/06/15/dedecms%E6%8C%96%E6%8E%98/" title="dedecms挖掘"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  <div class="bar-right">
-    
-  </div>
-  </div>
-</nav>
+    </div></div></div></section>
   
 
-
+	    </div>
+  	</article>
+  	 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -491,102 +417,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-   
-
-
-<!-- custom analytics part create by xiamo -->
-<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
-<script defer>
-AV.init({
-  appId: '',
-  appKey: ''
-});
-
-function showTime(Counter) {
-	var query = new AV.Query(Counter);
-		var visitors= $('.leancloud_visitors');
-		query.greaterThanOrEqualTo("time", 0);		
-		query.find({
-			success: function(results) {
-				if (results.length == 0) {				
-					return;
-				}
-				var data = results;
-				visitors.each(function(){
-					var url = $(this).attr('id').trim();					
-					for (var i = 0; i < data.length; i++) {
-						var object = data[i];
-						var content = object.get('time');
-						var _url = object.get('url')
-						if(url == _url){
-							$(this).text(content);
-						}
-					}
-				})
-				
-			},
-			error: function(object, error) {
-				console.log("Error: " + error.code + " " + error.message);
-			}
-		});
-}
-
-function addCount(Counter) {
-	var Counter = AV.Object.extend("Counter");
-	url = $(".leancloud_visitors").attr('id').trim();
-	title = $(".leancloud_visitors").attr('data-flag-title').trim();
-	var query = new AV.Query(Counter);
-	query.equalTo("url", url);
-	query.find({
-		success: function(results) {
-			if (results.length > 0) {
-				var counter = results[0];
-				counter.fetchWhenSave(true);
-				counter.increment("time");
-				counter.save(null, {
-					success: function(counter) {
-						var content = counter.get('time');
-						$(document.getElementById(url)).text(content);
-					},
-					error: function(counter, error) {
-						console.log('Failed to save Visitor num, with error message: ' + error.message);
-					}
-				});
-			} else {
-				var newcounter = new Counter();
-				newcounter.set("title", title);
-				newcounter.set("url", url);
-				newcounter.set("time", 1);
-				newcounter.save(null, {
-					success: function(newcounter) {
-					    console.log("newcounter.get('time')="+newcounter.get('time'));
-						var content = newcounter.get('time');
-						$(document.getElementById(url)).text(content);
-					},
-					error: function(newcounter, error) {
-						console.log('Failed to create');
-					}
-				});
-			}
-		},
-		error: function(error) {
-			console.log('Error:' + error.code + " " + error.message);
-		}
-	});
-}
-$(function() {
-	var Counter = AV.Object.extend("Counter");
-	if ($('.leancloud_visitors').length == 1) {
-		addCount(Counter);
-	} else {
-		showTime(Counter);
-	}
-}); 
-</script>
-
-
-
-   
 
 
 
