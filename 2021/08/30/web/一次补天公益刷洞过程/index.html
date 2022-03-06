@@ -21,23 +21,23 @@
   <meta name="description" content="在补天平台出了一个活动，白帽子提交公益漏洞通过了都可以获取库币，对这一次活动记录一下批量刷洞的过程。 使用工具：nuclei，fofa采集器，httpx，python脚本 首先决定刷的漏洞是NC bsh.servlt.BshServlet远程命令执行和泛微OA8前台SQL注入，使用nuclei编写poc，原理是对目标url拼接&#x2F;servlet&#x2F;~ic&#x2F;bsh.servlet.BshServlet，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一次补天公益刷洞过程">
-<meta property="og:url" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:url" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在补天平台出了一个活动，白帽子提交公益漏洞通过了都可以获取库币，对这一次活动记录一下批量刷洞的过程。 使用工具：nuclei，fofa采集器，httpx，python脚本 首先决定刷的漏洞是NC bsh.servlt.BshServlet远程命令执行和泛微OA8前台SQL注入，使用nuclei编写poc，原理是对目标url拼接&#x2F;servlet&#x2F;~ic&#x2F;bsh.servlet.BshServlet，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/01.jpg">
-<meta property="og:image" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/02.jpg">
-<meta property="og:image" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/03.jpg">
-<meta property="og:image" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/04.jpg">
-<meta property="og:image" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/05.jpg">
+<meta property="og:image" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/01.jpg">
+<meta property="og:image" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/02.jpg">
+<meta property="og:image" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/03.jpg">
+<meta property="og:image" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/04.jpg">
+<meta property="og:image" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/05.jpg">
 <meta property="article:published_time" content="2021-08-30T01:13:47.278Z">
 <meta property="article:modified_time" content="2022-03-06T06:25:05.609Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/01.jpg">
+<meta name="twitter:image" content="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/01.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/index.html">
+  <link rel="canonical" href="http://example.com/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -243,7 +243,7 @@
                 <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
               </p>
               <p class="item-title">
-                <a href="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/" class="title">上传pdf文件造成xss</a>
+                <a href="/2021/10/02/web/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/" class="title">上传pdf文件造成xss</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-10-01T16:00:00.000Z" itemprop="datePublished">2021-10-02</time>
@@ -258,7 +258,7 @@
                 <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
               </p>
               <p class="item-title">
-                <a href="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="title">一次补天公益刷洞过程</a>
+                <a href="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="title">一次补天公益刷洞过程</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-08-30T01:13:47.278Z" itemprop="datePublished">2021-08-30</time>
@@ -288,7 +288,7 @@
                 <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
               </p>
               <p class="item-title">
-                <a href="/2021/06/15/dedecms%E6%8C%96%E6%8E%98/" class="title">dedecms挖掘</a>
+                <a href="/2021/06/15/web/dedecms%E6%8C%96%E6%8E%98/" class="title">dedecms挖掘</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-06-15T01:34:23.330Z" itemprop="datePublished">2021-06-15</time>
@@ -303,7 +303,7 @@
                 <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
               </p>
               <p class="item-title">
-                <a href="/2021/05/04/%E7%8C%9C%E6%B5%8B%E9%9A%90%E8%97%8F%E5%8F%82%E6%95%B0%E4%B9%8B%E8%B6%8A%E6%9D%83/" class="title">猜测隐藏参数之越权</a>
+                <a href="/2021/05/04/web/%E7%8C%9C%E6%B5%8B%E9%9A%90%E8%97%8F%E5%8F%82%E6%95%B0%E4%B9%8B%E8%B6%8A%E6%9D%83/" class="title">猜测隐藏参数之越权</a>
               </p>
               <p class="item-date">
                 <time datetime="2021-05-04T01:24:23.628Z" itemprop="datePublished">2021-05-04</time>
@@ -324,7 +324,7 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-一次补天公益刷洞过程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-web/一次补天公益刷洞过程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
@@ -339,7 +339,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="article-date">
+	<a href="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="article-date">
 	  <time datetime="2021-08-30T01:13:47.278Z" itemprop="datePublished">2021-08-30</time>
 	</a>
 </span>
@@ -360,10 +360,10 @@
 
 	<span class="article-read hidden-xs">
     	<i class="icon icon-eye-fill" aria-hidden="true"></i>
-    	<span id="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="leancloud_visitors"  data-flag-title="一次补天公益刷洞过程">0</span>
+    	<span id="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/" class="leancloud_visitors"  data-flag-title="一次补天公益刷洞过程">0</span>
     </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -375,18 +375,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">id: NC_bsh远程命令执行漏洞</span><br><span class="line"></span><br><span class="line">info:</span><br><span class="line">  name: NC_bsh远程命令执行漏洞</span><br><span class="line">  author: noEvery</span><br><span class="line">  severity: high</span><br><span class="line">  tags: my,cve,nc</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">requests:</span><br><span class="line">  - method: GET</span><br><span class="line">    path:</span><br><span class="line">      - &quot;&#123;&#123;BaseURL&#125;&#125;&#x2F;servlet&#x2F;~ic&#x2F;bsh.servlet.BshServlet&quot;</span><br><span class="line"></span><br><span class="line">    matchers-condition: and</span><br><span class="line">    matchers:</span><br><span class="line">      - type: status</span><br><span class="line">        status:</span><br><span class="line">          - 200</span><br><span class="line">      - type: word</span><br><span class="line">        words:</span><br><span class="line">          - &#39;print(&quot;hello!&quot;);&#39;</span><br></pre></td></tr></table></figure>
 
 <p>使用fofa采集器收集存在nc系统的网站，将目标提取出来</p>
-<p><img src="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/01.jpg" alt="图1"></p>
+<p><img src="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/01.jpg" alt="图1"></p>
 <p>使用httpx进行发包探测，将能够访问的目标进行提取</p>
-<p><img src="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/02.jpg" alt="图2"></p>
+<p><img src="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/02.jpg" alt="图2"></p>
 <p>将写好的poc和目标放到服务器上使用nuclei运行，-l 指定目标文件，-t 指定写好的poc脚本</p>
-<p><img src="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/03.jpg" alt="图3"></p>
+<p><img src="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/03.jpg" alt="图3"></p>
 <p>得到的结果文件如下</p>
-<p><img src="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/04.jpg" alt="图4"></p>
+<p><img src="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/04.jpg" alt="图4"></p>
 <p>因为fofa搜集出来的大部分是ip，需要批量查出域名和公司名称，这里使用自己写的python脚本进行批量查询，脚本流程是先正则匹配链接中的ip进行提取，使用ip在爱站中反查域名，拿到域名再到站长之家的icp备案查询获取公司名称。针对爱站和站长之家的icp备案进行查询，爱站存在反机制，添加随机UA头和sleep(1.5)延迟查询绕过，脚本中的user-agents.txt文件存放着多个不同的UA头。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python3.6</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"># @Time    : 2021&#x2F;8&#x2F;14 19:38</span><br><span class="line"># @File    : ip提取.py</span><br><span class="line"># @Software: PyCharm</span><br><span class="line">import re</span><br><span class="line">import requests</span><br><span class="line">import time</span><br><span class="line">import random</span><br><span class="line"></span><br><span class="line">ip_re &#x3D; re.compile(r&#39;((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d)(\.((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))&#123;3&#125;&#39;)</span><br><span class="line">sub_re &#x3D; re.compile(&#39;&lt;a href&#x3D;&quot;.*?&quot; rel&#x3D;&quot;nofollow&quot; target&#x3D;&quot;_blank&quot;&gt;(.*?)&lt;&#x2F;a&gt;&#39;)</span><br><span class="line">company_re &#x3D; re.compile(&#39;&lt;a target&#x3D;&quot;_blank&quot; href&#x3D;&quot;&#x2F;&#x2F;data.chinaz.com&#x2F;company&#x2F;t0-p0-c0-i0-d0-s-(.*?)&quot;&gt;&#39;)</span><br><span class="line"># 添加随机UA头</span><br><span class="line">with open(&#39;user-agents.txt&#39;, &#39;r&#39;) as f_UA:</span><br><span class="line">    user_agents &#x3D; f_UA.readlines()</span><br><span class="line">res &#x3D; open(&#39;res.txt&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;)</span><br><span class="line">##把同一行的ip换行,然后写进result.txt的文件里</span><br><span class="line">with open(&#39;target.txt&#39;, &#39;r&#39;, encoding&#x3D;&#39;utf-8&#39;) as readlist:</span><br><span class="line">    for dirs in readlist.readlines():</span><br><span class="line">        headers &#x3D; &#123;</span><br><span class="line">            &#39;User-Agent&#39;: random.choice(user_agents).strip()</span><br><span class="line">        &#125;</span><br><span class="line">        try:</span><br><span class="line">            dir &#x3D; ip_re.search(dirs).group()</span><br><span class="line">        except:</span><br><span class="line">            print(&#39;没有ip&#39;)</span><br><span class="line">            continue</span><br><span class="line">        url &#x3D; &quot;https:&#x2F;&#x2F;dns.aizhan.com&#x2F;&quot;+ dir +&quot;&#x2F;&quot;</span><br><span class="line">        response &#x3D; requests.get(url&#x3D;url,headers&#x3D;headers).text</span><br><span class="line">        sub &#x3D; sub_re.findall(response)</span><br><span class="line">        time.sleep(1.5)</span><br><span class="line">        if len(sub) &gt; 0:</span><br><span class="line">            url &#x3D; &quot;http:&#x2F;&#x2F;icp.chinaz.com&#x2F;&quot; + sub[0]</span><br><span class="line">            response &#x3D; requests.get(url&#x3D;url, headers&#x3D;headers).text</span><br><span class="line">            company &#x3D; company_re.findall(response)</span><br><span class="line">            if len(company)&gt;0:</span><br><span class="line">                target &#x3D; dirs.replace(&#39;\n&#39;,&#39;&#39;) + &quot;      -----IP：&quot;+dir+&quot;域名为：&quot; + sub[0] + &quot;   公司名称：&quot; + company[0]</span><br><span class="line">                print(target)</span><br><span class="line">                res.write(target + &#39;\n&#39;)</span><br><span class="line">res.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>获取的结果文件如下（以下结果是我半个月前运行得到的，那时候爱站还能通过这种方式绕过反爬策略，可能是前些日子爬的次数太多，爱站修改了查询规则，需要登录才可以进行查询）：</p>
-<p><img src="/2021/08/30/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/05.jpg" alt="图5"></p>
+<p><img src="/2021/08/30/web/%E4%B8%80%E6%AC%A1%E8%A1%A5%E5%A4%A9%E5%85%AC%E7%9B%8A%E5%88%B7%E6%B4%9E%E8%BF%87%E7%A8%8B/05.jpg" alt="图5"></p>
 <p>就差提交到补天就完事了，泛微OA8前台SQL注入也是一样的流程。</p>
 
       
@@ -411,7 +411,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/" title="上传pdf文件造成xss"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2021/10/02/web/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/" title="上传pdf文件造成xss"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
