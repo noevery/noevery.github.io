@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-06T06:22:25.285Z</updated>
+  <updated>2022-03-06T06:31:05.321Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -18,18 +18,18 @@
   
   <entry>
     <title>上传pdf文件造成xss</title>
-    <link href="http://example.com/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/"/>
-    <id>http://example.com/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/</id>
-    <published>2022-03-06T06:11:34.534Z</published>
-    <updated>2022-03-06T06:22:25.285Z</updated>
+    <link href="http://example.com/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/"/>
+    <id>http://example.com/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/</id>
+    <published>2021-10-01T16:00:00.000Z</published>
+    <updated>2022-03-06T06:31:05.321Z</updated>
     
-    <content type="html"><![CDATA[<p>在一次挖src过程中，来到当前页面，点击邮箱图标</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002.jpg" alt="img"></p><p>弹出一个留言功能，有个上传附件功能</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547625735.jpg" alt="img"></p><p>首先上传一个正常的图片，返回上传成功后图片的链接，图片被传到另一个域名下。</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547643509.jpg" alt="img"></p><p>访问上传的图片</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547656508.jpg" alt="img"></p><p>去掉图片路径，查看该域名的主页，可以看出该域名专门用来放置上传的图片资源，没有执行语言的权限</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547664422.jpg" alt="img"></p><p>所以无法进行getsell，通过随机后缀名发现使用的是黑名单进行过滤</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547671467.jpg" alt="img"></p><p>尝试上传html后缀造成存储型XSS，上传失败，html后缀在黑名单中</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002.png" alt="1633150312"></p><p>尝试上传pdf文件，发现能够在线预览，这时候以我十多年的挖洞经验来看，可以试着上传pdf文件进行弹框</p><p>pdf弹框制作：使用迅捷pdf编辑器新建一个pdf文件</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547706140.jpg" alt="img"></p><p>点击左边导航空白页，然后点击属性，右边导航就会出现页面属性</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547716526.jpg" alt="img"></p><p>双击动作下面的打开页面，选择新增动作，选择JavaScript类型，添加代码：app.alert(‘XSS’)</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547725227.jpg" alt="img"></p><p>将生成好的pdf文件上传到该网站，上传成功</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547734040.jpg" alt="img"></p><p>访问上传的pdf文件，造成弹框（本机环境测试谷歌浏览器可以造成弹框，火狐不行）</p><p><img src="/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547744768.jpg" alt="img"></p>]]></content>
+    <content type="html"><![CDATA[<p>在一次挖src过程中，来到当前页面，点击邮箱图标</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002.jpg" alt="img"></p><p>弹出一个留言功能，有个上传附件功能</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547625735.jpg" alt="img"></p><p>首先上传一个正常的图片，返回上传成功后图片的链接，图片被传到另一个域名下。</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547643509.jpg" alt="img"></p><p>访问上传的图片</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547656508.jpg" alt="img"></p><p>去掉图片路径，查看该域名的主页，可以看出该域名专门用来放置上传的图片资源，没有执行语言的权限</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547664422.jpg" alt="img"></p><p>所以无法进行getsell，通过随机后缀名发现使用的是黑名单进行过滤</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547671467.jpg" alt="img"></p><p>尝试上传html后缀造成存储型XSS，上传失败，html后缀在黑名单中</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002.png" alt="1633150312"></p><p>尝试上传pdf文件，发现能够在线预览，这时候以我十多年的挖洞经验来看，可以试着上传pdf文件进行弹框</p><p>pdf弹框制作：使用迅捷pdf编辑器新建一个pdf文件</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547706140.jpg" alt="img"></p><p>点击左边导航空白页，然后点击属性，右边导航就会出现页面属性</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547716526.jpg" alt="img"></p><p>双击动作下面的打开页面，选择新增动作，选择JavaScript类型，添加代码：app.alert(‘XSS’)</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547725227.jpg" alt="img"></p><p>将生成好的pdf文件上传到该网站，上传成功</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547734040.jpg" alt="img"></p><p>访问上传的pdf文件，造成弹框（本机环境测试谷歌浏览器可以造成弹框，火狐不行）</p><p><img src="/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002-1646547744768.jpg" alt="img"></p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;在一次挖src过程中，来到当前页面，点击邮箱图标&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2022/03/06/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002.jpg&quot; alt</summary>
+&lt;p&gt;&lt;img src=&quot;/2021/10/02/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/clip_image002.jpg&quot; alt</summary>
       
     
     
