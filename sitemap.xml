@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/03/06/vul/%E7%8B%AE%E5%AD%90%E9%B1%BCCMS-ApigoodsController.class.php-SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</loc>
+    
+    <lastmod>2022-03-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/10/02/web/%E4%B8%8A%E4%BC%A0pdf%E6%96%87%E4%BB%B6%E9%80%A0%E6%88%90xss/</loc>
     
     <lastmod>2022-03-06</lastmod>
@@ -137,6 +144,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/web/</loc>
+    <lastmod>2022-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -144,14 +158,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E/</loc>
+    <loc>http://example.com/tags/vul/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/web/</loc>
+    <loc>http://example.com/tags/%E9%80%9A%E7%94%A8%E6%BC%8F%E6%B4%9E/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -167,6 +181,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/python/</loc>
+    <lastmod>2022-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -174,7 +195,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/python/</loc>
+    <loc>http://example.com/categories/%E6%BC%8F%E6%B4%9E/</loc>
     <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
