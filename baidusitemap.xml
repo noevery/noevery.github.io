@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2022/03/07/vul/Spring-Cloud-Gateway-CVE-2022-22947/</loc>
+    <lastmod>2022-03-07</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2022/03/06/vul/%E7%8B%AE%E5%AD%90%E9%B1%BCCMS-ApigoodsController.class.php-SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</loc>
     <lastmod>2022-03-06</lastmod>
   </url>
