@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-08T07:44:33.973Z</updated>
+  <updated>2022-09-08T07:49:29.050Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>hashcat工具的使用</title>
     <link href="http://example.com/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://example.com/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-09-08T03:14:00.000Z</published>
-    <updated>2022-09-08T07:44:33.973Z</updated>
+    <updated>2022-09-08T07:49:29.050Z</updated>
     
     <content type="html"><![CDATA[<h1 id="hashcat工具的使用"><a href="#hashcat工具的使用" class="headerlink" title="hashcat工具的使用"></a>hashcat工具的使用</h1><p>工具下载：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;c465869935&#x2F;article&#x2F;details&#x2F;51491913</span><br></pre></td></tr></table></figure><p>由于kali使用该工具环境报错，这里使用的是windows工具</p><p>下载后解压，使用hashcat –help测试工具是否能使用</p><p><img src="/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/image-20220908114357568.png" alt="image-20220908114357568"></p><p>以我自己某台linux主机为例，通过cat /etc/shadow查看密码的加密字段</p><p><img src="/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/image-20220908114533010.png" alt="image-20220908114533010"></p><p>在不知道加密方式的情况下，可以通过官网给出的对照表进行查看，加密方式对照表链接如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hashcat.net&#x2F;wiki&#x2F;doku.php?id&#x3D;example_hashes</span><br></pre></td></tr></table></figure><p>通过对比得知加密方式为md5crypt, MD5 (Unix), Cisco-IOS $1$ (MD5) 2，id为500</p><p><img src="/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/image-20220908115126252.png" alt="image-20220908115126252"></p><p>将类似加密字段$1$28772684$iEwNOgGugqO9.bIz5sk8k/ 放在1.txt文件中，pass.txt存放密码字典，使用命令爆破</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\hashcat.exe -a 0 -m 500 1.txt pass.txt -o res.txt</span><br></pre></td></tr></table></figure><p>-a 0      -a表示指定爆破方式，0表示使用加载字典的方式爆破</p><p>-m  500   -m表示指定加密的方式，500对应的加密方式为md5crypt，可通过–help查询或者加密方式对照表查询</p><p><img src="/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/image-20220908153659265.png" alt="image-20220908153659265"></p><p><img src="/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/image-20220908153930132.png" alt="image-20220908153930132"></p><p>密码字典已存放了我linux主机的密码，打开结果文件，以:为分割，前面是加密的字段，后面是爆破出来的密码，说明爆破成功。</p><p><img src="/2022/09/08/hashcat%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8/image-20220908154411578.png" alt="image-20220908154411578"></p><p>ref:</p><p><a href="https://blog.csdn.net/c465869935/article/details/51491913">https://blog.csdn.net/c465869935/article/details/51491913</a></p>]]></content>
     
@@ -34,6 +34,10 @@
     
     
     
+    <category term="工具使用" scheme="http://example.com/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="工具" scheme="http://example.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
