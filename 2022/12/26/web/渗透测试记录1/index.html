@@ -25,22 +25,22 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在一次测试学校网站时，通过目录扫描得到备份文件wwwroot  使用sublime编辑器打开该文件，这是由thinkphp3.2.3框架写的系统， **** 翻了一下配置文件config.php查看数据库连接，数据库为本地连接，扫了一下端口只开放80和21端口，未开放3306端口，无法利用。  通过全局搜索$_Get查找sql注入，发现sql_filter.php文件为sql注入防护文件  sql">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226134937075.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226135339830.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226140742427.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226141143705.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226141320162.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226143515730.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226144255328.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226144624406.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20230208213328418.png">
-<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226142018455.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226134937075.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226135339830.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226140742427.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226141143705.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226141320162.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226143515730.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226144255328.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226144624406.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20230208213328418.png">
+<meta property="og:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226142018455.png">
 <meta property="article:published_time" content="2022-12-26T05:34:12.455Z">
-<meta property="article:modified_time" content="2023-02-08T13:33:51.698Z">
+<meta property="article:modified_time" content="2023-02-08T13:53:24.221Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog/source_posts/web/渗透测试记录1/image-20221226134937075.png">
+<meta name="twitter:image" content="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226134937075.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/index.html">
   
@@ -375,24 +375,24 @@
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <p>在一次测试学校网站时，通过目录扫描得到备份文件wwwroot</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226134937075.png" alt="image-20221226134937075"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226134937075.png" alt="image-20221226134937075"></p>
 <p>使用sublime编辑器打开该文件，这是由thinkphp3.2.3框架写的系统，</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226135339830.png" alt="image-20221226135339830">****</p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226135339830.png" alt="image-20221226135339830">****</p>
 <p>翻了一下配置文件config.php查看数据库连接，数据库为本地连接，扫了一下端口只开放80和21端口，未开放3306端口，无法利用。</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226140742427.png" alt="image-20221226140742427"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226140742427.png" alt="image-20221226140742427"></p>
 <p>通过全局搜索$_Get查找sql注入，发现sql_filter.php文件为sql注入防护文件</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226141143705.png" alt="image-20221226141143705"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226141143705.png" alt="image-20221226141143705"></p>
 <p>sql_filter.php的逻辑如下：过滤了”`”,”‘“,”;”,”union”,”select”,”insert”,”update”,”delete”,”into”,”load_file”,”outfile”,”%”,”and”，就是只要有双引号闭合的或者是数字类型的就可能存在sql注入，并且将$_POST和$_GET参数进行了一个合并。</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226141320162.png" alt="image-20221226141320162"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226141320162.png" alt="image-20221226141320162"></p>
 <p>在查询数字型注入的时候又发现此处代码，判断id或者nid是否为数字，不是的话就会跳转到/index，说明有关id或者nid数字型的参数无法注入。</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226143515730.png" alt="image-20221226143515730"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226143515730.png" alt="image-20221226143515730"></p>
 <p>sql注入找寻未有成果，在search.html页面找到一处xss漏洞，参数name未做任何过滤直接打印输出</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226144255328.png" alt="image-20221226144255328"></p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226144624406.png" alt="image-20221226144624406"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226144255328.png" alt="image-20221226144255328"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226144624406.png" alt="image-20221226144624406"></p>
 <p>在配置文件中查看得到数据库账号和密码，使用该账号去登录ftp服务也能登录成功</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20230208213328418.png" alt="image-20230208213328418"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20230208213328418.png" alt="image-20230208213328418"></p>
 <p>登录成功如下图</p>
-<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/blog\source_posts\web\渗透测试记录1\image-20221226142018455.png" alt="image-20221226142018455"></p>
+<p><img src="/2022/12/26/web/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%951/image-20221226142018455.png" alt="image-20221226142018455"></p>
 
       
     </div>
